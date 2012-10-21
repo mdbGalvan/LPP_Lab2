@@ -1,6 +1,8 @@
-# File : ppt.rb
+# File : ppt_class.rb
 
-# Esta clase mediante una programación imperativa, simulará el juego de piedra, papel y tijera
+# Esta clase simulará el juego de piedra, papel y tijera
+# Aunque no la vamos a utilizar en esta práctica, pero es bastante interesante
+# incluso para aprender el concepto de método de clase y forma de llamarlo
 class Ppt
   
   # Variables de clase: 
@@ -23,15 +25,16 @@ class Ppt
       # Mediante el hacer (sample) se elige una opción para la computadora
       computer_option = @@options.sample
       
-      # Con ayuda del hash
-      if player_option == computer_option
-	" Hay un empate "
-      elsif player_option == @@wins[computer_option]
-	" Lo siento!!! Has perdido. "
-      else
-	" Has ganado. "
-      end
-      
+      # Con ayuda del hash guardamos en answer como ha quedado nuestra apuesta
+      answer =  case player_option
+		when computer_option
+		  " Hay un empate "
+		when @@wins[computer_option]
+		  " Lo siento!!! Has perdido. "
+		else 
+		  " Has ganado. "
+		end
+	    
     end # Fin play
     
   end # Fin << self
