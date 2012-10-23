@@ -27,6 +27,8 @@ answer =  case player_option
 	  end
       
 puts answer
+#puts player_option
+#puts computer_option
 
 
  
